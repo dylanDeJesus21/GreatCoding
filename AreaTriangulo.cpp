@@ -1,20 +1,21 @@
 #include <cmath>
 #include <iostream>
+#include <Triangle.h>
 
 using namespace std;
 
 //signuture of the function
-double computeTriangleArea(double s1, double s2, double s3){
+double computeTriangleArea(Triangle t){
 //body of function
-double s = (s1 + s2 + s3) / 2;
-double area = sqrt(s*(s - s1)*(s - s2)*(s - s3));
+double s = (t.side1 + t.side2 + t.side3) / 2;
+double area = sqrt(s*(s - t.side1)*(s - t.side2)*(s - t.side3));
 return area;
 }
 
 int main(){
 
-    cout<< "Area is: "<< computeTriangleArea(4, 13, 15) <<endl;
-    cout<< "Area is: "<< computeTriangleArea(10, 10, 10) <<endl;
-    cout<< "Area is: "<< computeTriangleArea(20, 20, 20) <<endl;
+    cout<< "Area is: "<< computeTriangleArea(Triangle(4, 13, 15)) <<endl;
+    cout<< "Area is: "<< computeTriangleArea(Triangle(10, 10, 10)) <<endl;
+    cout<< "Area is: "<< computeTriangleArea(Triangle(20, 20, 20)) <<endl;
 
 }
